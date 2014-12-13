@@ -62,6 +62,7 @@ Here is the process I followed to build this blog, you can find [the original qu
     Then edit the newly created file in `/_posts/`.
 
 8. Choose a nice theme from [http://themes.jekyllbootstrap.com/](http://themes.jekyllbootstrap.com/) and install it with
+
         rake theme:install git="https://github.com/jekyllbootstrap/theme-the-minimum.git"
 
 9. Change the landing page in `/index.md`. Pages can be placed anywhere (root directory or subdirectory to class them) but must contain the YAML Front-matter header.
