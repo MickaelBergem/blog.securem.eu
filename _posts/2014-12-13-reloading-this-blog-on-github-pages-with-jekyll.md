@@ -26,4 +26,45 @@ But as only static (HTML for instance) pages can be committed, you will need [*J
 * Ability to host your blog on a static web-server, like GitHub Pages.
 * No database required.
 
-The *How ?* part is coming soon !
+## How ?
+
+I often do **"bang-documentation"**, meaning that **I only provide the key steps to achieve the goal**, assuming that you are able to find more detailed documentation by yourself if needed. If a part is unclear, though, please leave me a comment and I will fix it !
+
+I used [Jekyll Bootstrap](http://jekyllbootstrap.com/), which use pre-built HTML Bootstrap pages instead of Liquid templating : directly editing HTML seems to me easier than learning a new templating language.
+
+Here is the process I followed to build this blog, you can find [the original quickstart guide here](http://jekyllbootstrap.com/usage/jekyll-quick-start.html) :
+
+
+1. Fork [https://github.com/plusjade/jekyll-bootstrap.git](https://github.com/plusjade/jekyll-bootstrap.git) or clone/push it into a new public / private repository
+
+        git clone https://github.com/plusjade/jekyll-bootstrap.git jekyll-blog
+        cd jekyll-blog
+        git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+        git push origin master:gh-pages
+
+2. Add a CNAME file and entry in your DNS zone
+
+        echo "blog.securem.eu" > CNAME
+
+        git add CNAME && git ci -m "Add CNAME file" && git push
+        # You will also need to edit your DNS zone to point the right subdomain to your github pages (username.github.io)
+
+4. Run `gem install --user-install jekyll` on your computer to install Jekyll
+
+5. Configure `/_config.yml` to your needs (for example, the blog's name or a Piwik / Google Analytics tracking ID)
+
+6. Launch the built-in webserver with `jekyll serve` then head to [http://127.0.0.1:4000/](http://127.0.0.1:4000/) (will autoreload the server when you create/edit content, but it doesn't watch the `/_config.yml` file)
+
+7. Create your first blog post with
+
+        rake post title="My first blog post !"
+
+    Then edit the newly created file in `/_posts/`.
+
+8. Choose a nice theme from [http://themes.jekyllbootstrap.com/](http://themes.jekyllbootstrap.com/) and install it with
+        rake theme:install git="https://github.com/jekyllbootstrap/theme-the-minimum.git"
+
+9. Change the landing page in `/index.md`. Pages can be placed anywhere (root directory or subdirectory to class them) but must contain the YAML Front-matter header.
+
+10. Commit, push, and enjoy !
+
