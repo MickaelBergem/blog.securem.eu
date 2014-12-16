@@ -4,9 +4,10 @@ layout: page
 ---
 {% include JB/setup %}
 
-Welcome on my blog.
+Welcome to my blog.
 
-I am Mickaël, aka [Suixo](https://twitter.com/msuixo), a French student and hacker. Learn more on me [on my personal webpage](http://me.securem.eu/).
+I am Mickaël, aka [Suixo](https://twitter.com/msuixo), a French student and hacker.
+Learn more about me [on my personal webpage](http://me.securem.eu/).
 
 ***
 
