@@ -47,3 +47,30 @@ hr { -moz-box-sizing: content-box; }
 	*display: inline;
 	float: right;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.bigbutton {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px auto;
+    background-color: #B9D85A;
+    border: 0 !important;
+}
+
+.bigbutton-center {
+    position: absolute;
+}
+
+.bigbutton:hover {
+    background-color: #BBD863;
+}
+
+.bigbutton[href^="https://github.com/"]:before {
+    content: '\f09b';
+    font: normal normal normal 25px/1 FontAwesome;
+    vertical-align: middle;
+    padding-right: 8px;
+}
