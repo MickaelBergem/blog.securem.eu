@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python ProTip : cache the PyPi packages downloaded by PIP"
+title: "Python ProTip : caching the PyPi packages downloaded by PIP"
 description: "It is possible to cache the PyPi packages downloaded by PIP, to make your builds more fast"
 category: tips and tricks
 tags: [python, pip]
