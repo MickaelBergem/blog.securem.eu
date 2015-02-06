@@ -76,3 +76,7 @@ hr { -moz-box-sizing: content-box; }
     vertical-align: middle;
     padding-right: 8px;
 }
+
+article p {
+    text-align: justify;
+}
