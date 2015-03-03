@@ -558,9 +558,12 @@ pre {
 .unit-article .entry-content,
 .unit-article .misc-content,
 .unit-article .unit-foot-inner {
-  width: 15em;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 .unit-article .unit-head-inner .meta {
   margin-bottom: 1.625em;
@@ -704,12 +707,11 @@ pre {
   .the-header .nav-global li:last-child {
     margin-right: 0;
   }
-  .unit-article .unit-head-inner,
+/*  .unit-article .unit-head-inner,
   .unit-article .entry-content,
   .unit-article .misc-content,
   .unit-article .unit-foot-inner {
-    width: 26.25em;
-  }
+  }*/
   .unit-article .unit-foot .gotop {
     margin-top: 1.625em;
   }
