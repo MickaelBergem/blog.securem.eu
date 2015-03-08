@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Flooding the phisherman (with fake credentials)"
+title: "Flooding the Phisherman (with fake credentials)"
 description: "This morning I woke up with another phishing mail in my mailbox. I remembered @averagesecguy flooding the fake website with fake credentials, and decided to do the same."
 category: projects
 tags: [netsec, phishing, flooding, fight back, python]
 ---
 {% include JB/setup %}
 
-This morning, another phishing email in my inbox. Short message, and a link to http://priveservicetemporaire.fr/ (targets French users).
+This morning, another phishing email in my inbox. Short message, and a link to [http://priveservicetemporaire.fr/](http://priveservicetemporaire.fr/) (targets French users).
 
-I rembered reading this tweet from @averagesecguy :
+I remembered reading this tweet from [@averagesecguy](https://twitter.com/averagesecguy) :
 
 <blockquote class="twitter-tweet" data-cards="hidden" lang="fr"><p>Find a phishing site? Overwhelm it with fake credentials. <a href="https://t.co/nS56XNb6ek">https://t.co/nS56XNb6ek</a> It&#39;s preconfigured for a phishing site I found today.</p>&mdash; Stephen Haywood (@averagesecguy) <a href="https://twitter.com/averagesecguy/status/569906030475399170">23 Février 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -37,22 +37,22 @@ Then I began to flood the phishing website :
 After the 75<sup>th</sup> post, the flood stopped working: the website was throwing an error ("Error sending the message").
 My guess is that the form sends an email to the "phisherman" instead of storing the credentials on the server, and the hoster limits the number of sent email per hour (75 mail / hour ?). Trying a few hours after gave the same result.
 
-Now the phisherman receives hundreds of fake credentials into his mailbox, nice eh ?
+Now the phisherman is receiving hundreds of fake credentials into his mailbox, each day. Nice, eh ?
 
 ![Phisherman vs Water](/assets/illustrations/phisherman.gif)
 
 Okay, now even if someone fills in their credentials, nothing will be sent.
-But even if I plan to let the script run until the website gets down, there is something more efficient to do: report the incident !
+But even if I plan to let the script run until the website finally gets down, there is something more efficient to do: report the incident !
 
 ## Reporting phishing incidents
 
-*Whois* can give us the "abuse" registar contact, and information about who and when the domain name has been registered.
+*Whois* can give us the "abuse" registrar contact, and information about who and when the domain name has been registered.
 
 ```
 whois priveservicetemporaire.fr -H
 ```
 
-Sending an email to report the phishing website will hopefully result in the server beeing shut down.
+Sending an email to report the phishing website will hopefully result in the server being shut down.
 
 I then looked at the email, especially the headers to see from where did the email come from :
 
