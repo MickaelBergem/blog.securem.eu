@@ -10,5 +10,5 @@ I was talking about my previous blog in [my article about Jekyll and Github Page
 
 [![Access old blog](/assets/illustrations/archived-blog.png "Old SecureM blog")](http://archive-blog.securem.eu/)
 
-I will still be talking about web development, new technologies, and network security here, and in English now. I often use my blog as a reminder for complex manipulations or settings, but I also love to share things I may find or reviews of things I may try. Maybe the next post will be talking about performances of DNS Tunnels ! ;)
+I will still be talking about web development, new technologies, and network security here, and in English now. I often use my blog as a reminder for complex manipulations or settings, but I also love to share things I may find or reviews of things I may try. Maybe the next post will be talking about performance of DNS Tunnels ! ;)
 
