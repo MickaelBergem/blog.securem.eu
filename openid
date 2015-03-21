@@ -1,0 +1,7 @@
+<html>
+  <head>
+    <link rel="openid.server" href="http://securem.olympe.in/www/simpleid/" />
+    <link rel="openid2.provider" href="http://securem.olympe.in/www/simpleid/" />
+  </head>
+  <body></body>
+</html>
