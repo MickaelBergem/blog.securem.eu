@@ -7,7 +7,7 @@ tags: ['Docker', 'ownCloud', 'opensource']
 ---
 {% include JB/setup %}
 
-*TLDR*: this post explains how to setup a dockerized ownCloud server with a PostgreSQL database, persisting the data
+*TLDR*: this post explains how to use *Docker* to setup an *ownCloud server* with a PostgreSQL database, persisting the data
 across reboots or image upgrades.
 
 I finally reinstalled my entire VPS, using the provisioning tool Ansible, 
