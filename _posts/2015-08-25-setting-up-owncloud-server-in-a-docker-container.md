@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Setting up an ownCloud Server in a Docker container"
-description: ""
+title: "Setting up an ownCloud Server in a Docker container using Docker Compose"
+description: "How to setup an ownCloud server with Docker Compose"
 category: "Serverside"
 tags: ['Docker', 'ownCloud', 'opensource']
 ---
@@ -10,8 +10,8 @@ tags: ['Docker', 'ownCloud', 'opensource']
 *TLDR*: this post explains how to use *Docker* to setup an *ownCloud server* with a PostgreSQL database, persisting the data
 across reboots or image upgrades.
 
-I finally reinstalled my entire VPS, using the provisioning tool Ansible, 
-and I wanted to have a more isolated install of [ownCloud](https://owncloud.org/). 
+I finally reinstalled my entire VPS, using the provisioning tool Ansible,
+and I wanted to have a more isolated install of [ownCloud](https://owncloud.org/).
 I decided to use a *Docker container* to run this application in a more *isolated* and *portable* way,
 and to avoid installing this application directly on the server.
 
@@ -31,7 +31,7 @@ That was quick. Now, you can exit/stop this container.
 ### We will need a database
 
 If you don't already have a database up and running you want to use,
- you can either install one on the host, or *spin up a second container* for it. 
+ you can either install one on the host, or *spin up a second container* for it.
 Being an adept of PostgreSQL, let's use [the associate container](https://hub.docker.com/_/postgres/):
 
     docker run --name owncloud-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
@@ -48,19 +48,19 @@ If it doesn't work you can see the debug log (created after the first request on
 
 ### Persisting the data across container destruction and upgrade
 
-We will need to *store the ownCloud data and configuration folders outside of the container*, 
-as upgrading the container would destroy everything. 
+We will need to *store the ownCloud data and configuration folders outside of the container*,
+as upgrading the container would destroy everything.
 
 This can be achieved by using Docker Volumes, and even *[docker data volumes](https://docs.docker.com/userguide/dockervolumes/#creating-and-mounting-a-data-volume-container)*.
 We will need to do the same for the *PostgreSQL container* (think "database backup").
 
 At this point, copy-pasting the commands to run these containers begins to be unreadable,
- and painful. What we want is to describe how containers should be started, linked, and 
+ and painful. What we want is to describe how containers should be started, linked, and
 configured, so let's use [Docker Compose](https://docs.docker.com/compose/).
 
 ## Docker Compose
 
-The concept is simple: *use a YAML file to describe how your containers should be... composed 
+The concept is simple: *use a YAML file to describe how your containers should be... composed
 together*, and then let a `docker-compose up` start everything!
 
 You can install it with `pip install docker-compose`.
@@ -76,7 +76,7 @@ Here is the `docker-compose.yml` file:
        - 80:80
       links:
        - postgres:owncloud-db
-    
+
     postgres:
       image: postgres
       environment:
@@ -88,7 +88,7 @@ All you have to do now is `docker-compose up` to start all the containers.
 
 ### Persist the data
 
-Let's add some persistence by adding some *data volumes*: we want to create "data" containers for 
+Let's add some persistence by adding some *data volumes*: we want to create "data" containers for
 PostgreSQL (for the data itself) and ownCloud (configurations and files stored).
 
 The folders we need to persist are:
@@ -100,12 +100,12 @@ The folders we need to persist are:
 
 This is achieved using the `docker-compose.yml` file I uploaded [in this Gist](https://gist.github.com/MickaelBergem/524f8fcb39a3ad565663), take a look at it.
 
-To check all the data is persisted, you can star files (or remove/create files), and then remove the `postgres` and 
+To check all the data is persisted, you can star files (or remove/create files), and then remove the `postgres` and
 `owncloud` containers to check if the next `docker-comose up` does persist these modifications:
 
     docker rm -f test_owncloud_1 test_postgres_1 # Replace "test" by the name of your folder
     docker-compose up
-    
+
 Then go back in your browser:
 
 ![The changes are still here!](/assets/illustrations/docker-owncloud-starred.png)
@@ -116,7 +116,7 @@ Here you are! You have a fully functional ownCloud installation running locally!
 
 Please note that the `owncloud-data_1` and `postgres-data_1` containers should never be deleted.
 To upgrade the other non-data containers (postgres or owncloud) for example when a new image is available:
- 
+
     docker pull owncloud
     docker pull postgres
     docker-compose -d
