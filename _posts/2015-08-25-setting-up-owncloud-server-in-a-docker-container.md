@@ -101,7 +101,7 @@ The folders we need to persist are:
 This is achieved using the `docker-compose.yml` file I uploaded [in this Gist](https://gist.github.com/MickaelBergem/524f8fcb39a3ad565663), take a look at it.
 
 To check all the data is persisted, you can star files (or remove/create files), and then remove the `postgres` and
-`owncloud` containers to check if the next `docker-comose up` does persist these modifications:
+`owncloud` containers to check if the next `docker-compose up` does persist these modifications:
 
     docker rm -f test_owncloud_1 test_postgres_1 # Replace "test" by the name of your folder
     docker-compose up
