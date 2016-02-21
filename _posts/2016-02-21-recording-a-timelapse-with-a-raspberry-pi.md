@@ -4,6 +4,7 @@ title: "Recording a timelapse with a Raspberry Pi"
 description: "How to record a timelapse using the raspistill tool and ffmpeg"
 category: "Projects"
 tags: ['Raspberry Pi', 'image']
+image: /assets/illustrations/raspberry-pi-camera.jpg
 ---
 {% include JB/setup %}
 
