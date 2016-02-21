@@ -2,7 +2,7 @@
 layout: post
 title: "Flooding the Phisherman (with fake credentials)"
 description: "This morning I woke up with another phishing mail in my mailbox. I remembered @averagesecguy flooding the fake website with fake credentials, and decided to do the same."
-category: projects
+category: Projects
 tags: [netsec, phishing, flooding, fight back, python]
 ---
 {% include JB/setup %}

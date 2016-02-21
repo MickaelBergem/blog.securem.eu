@@ -2,10 +2,14 @@
 layout: post
 title: "Python ProTip : caching the PyPi packages downloaded by PIP"
 description: "It is possible to cache the PyPi packages downloaded by PIP, to make your builds more fast"
-category: tips and tricks
+category: Tips and tricks
 tags: [python, pip]
 ---
 {% include JB/setup %}
+
+**WARNING: this method is deprecated since [pip 6.0](https://pip.pypa.io/en/stable/news/), as caching is now enabled by default**
+
+***
 
 ## The How
 

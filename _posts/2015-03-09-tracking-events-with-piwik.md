@@ -2,7 +2,7 @@
 layout: post
 title: "Tracking events with Piwik"
 description: "Piwik is the leading open source web analytics platform, in this post I will explain how to track specific events triggered on the client side"
-category: tips and tricks
+category: Tips and tricks
 tags: [opensource, analytics, Piwik]
 ---
 {% include JB/setup %}

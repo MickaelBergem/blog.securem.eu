@@ -2,7 +2,7 @@
 layout: post
 title: "Unfollower : minimal Python script to track who unfollowed you"
 description: "Find out who unfollows you"
-category: projects
+category: Projects
 tags: [python, script, twitter]
 ---
 {% include JB/setup %}
