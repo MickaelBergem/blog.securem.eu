@@ -52,14 +52,20 @@ capture, all you have to do is save an image every N seconds:
 
 `raspistill` has a **built-in feature** to do the timelapse:
 
-* `-tl T`: a picture will be taken every T millisecond
-* `-t 0`: never timeout, keep shooting. You may want to set it to a high value like a few hours (value in ms).
-* `-n`: do not show any preview on the HDMI screen
-* `-w 1920 -h 1080`: HD is sufficient for a timelapse, you don't want a final 4GB video! Default is 2592 x 1944 (5 megapixels).
-* `-o image%04d.jpg`: filename for saved files  
+* `-tl T`: a picture will be taken every T millisecond (here 10s)
+* `-t 0`: never timeout, keep shooting. You may want to set it to a high value like a few hours (value in ms)
+* `-n`: do not show any preview on the HDMI screen (anyway we have no screen)
+* `-w 1920 -h 1080`: HD is sufficient for a timelapse, you don't want a final 4GB video! Default is 2592 x 1944 (5 megapixels)
+* `-o image%04d.jpg`: filename for saved files, here `%04d` means the number of the picture, on 4 digits
 
-This will create a large number of files like `image0012.jpg`, that can take a
-large disk space.
+About the output format, you can replace `%04d` by a simple `%d` and add the
+`-dt` (`--datetime`) flag that will replace the frame number by the datetime
+(MonthDayHourMinSec), to produce `test221172225.jpg` (February 21st, 17:22:25).
+If needed, the `-dt` flag can be replaced by `-ts` (`--timestamp`) that will use
+the number of seconds since 1900.
+
+Using the initial format, you will soon see a large number of files like
+`image0012.jpg`, that can take up a large disk space.
 
 **What delay for what storage space?**
 I chose to take a picture (~3MB) every ~20s, which is ~9MB every minute, 520MB
@@ -85,6 +91,6 @@ Ubuntu. I thus used `ffmpeg`.
 
 And TADAAA your timelapse video is ready! :D
 
-Now, let's laugh a bit seeing the potato chips bowls magically emptying, the
-glasses moving, and people dancing, playing games, kissing or falling asleep.
-And you can even create GIFs of your funny friends using the pictures!
+Now, let's laugh a bit seeing the potato chips bowl magically emptying, the
+glasses moving, people dancing, playing games, kissing or falling asleep.
+And you can even create GIFs of your funny friends using the raw pictures!
