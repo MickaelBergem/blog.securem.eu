@@ -1,8 +1,11 @@
 <meta content="{{ site.title }}" property="og:site_name">
+<meta property="twitter:card" content="summary">
 {% if page.title %}
 <meta content="{{ page.title }}" property="og:title">
+<meta property="twitter:title" content="{{ page.title }}">
 {% else %}
 <meta content="{{ site.title }}" property="og:title">
+<meta property="twitter:title" content="{{ site.title }}">
 {% endif %}
 {% if page.title %}
 <meta content="article" property="og:type">
@@ -11,10 +14,13 @@
 {% endif %}
 {% if page.description %}
 <meta content="{{ page.description }}" property="og:description">
+<meta property="twitter:description" content="{{ page.description }}">
 {% else %}
 <meta content="{{ site.description }}" property="og:description">
+<meta property="twitter:description" content="{{ site.description }}">
 {% endif %}
 {% if page.url %}
+<meta property="twitter:url" content="{{ site.production_url }}{{ page.url }}">
 <meta content="{{ site.production_url }}{{ page.url }}" property="og:url">
 {% endif %}
 {% if page.date %}
@@ -22,6 +28,7 @@
 <!-- <meta content="{{ site.url }}/about/" property="article:author"> -->
 {% endif %}
 {% if page.image %}
+<meta property="twitter:image" content="{{ site.production_url }}{{ page.image }}">
 <meta content="{{ site.production_url }}{{ page.image }}" property="og:image">
 {% endif %}
 {% if page.categories %}
@@ -30,3 +37,5 @@
 {% if page.tags %}
 {% for tag in page.tags %}<meta content="{{ tag }}" property="article:tag">{% endfor %}
 {% endif %}
+<meta property="twitter:site" content="{{ author.twitter }}">
+<meta property="twitter:creator" content="{{ author.twitter }}">
