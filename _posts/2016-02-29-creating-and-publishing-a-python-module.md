@@ -121,10 +121,12 @@ To save the configuration data, create a file in `~/.pypirc`:
 You may also add a `password` line if you don't want to type your password
 everytime. Then:
 
-    # Register your project
-    twine register dist/*.whl
-    # Upload the project
-    twine upload dist/*
+```bash
+# Register your project
+twine register dist/*.whl
+# Upload the project
+twine upload dist/*
+```
 
 And this is what you should get when you head to
 [testpypi.python.org](https://testpypi.python.org/pypi):
@@ -134,7 +136,9 @@ And this is what you should get when you head to
 If you need to make updates: change your code, bump the version to 1.0.1 in the
 `setup.py` file, optionally commit your code to your repository, and do:
 
-    twine upload dist/swaggymodule-1.0.1*
+```bash
+twine upload dist/swaggymodule-1.0.1*
+```
 
 This should have updated your project online and made the new version available.
 Now try it:
@@ -150,15 +154,17 @@ the next section:
 
 ## In a nutshell
 
-    pip install wheel twine setuptools --upgrade
-    # Check and update the server to use (https://pypi.python.org/pypi) and your credentials
-    nano ~/.pypirc
-    # Build the distributions
-    python setup.py sdist
-    python setup.py bdist_wheel
-    # Register and upload your package
-    twine register dist/*.whl
-    twine upload dist/*
+```bash
+pip install wheel twine setuptools --upgrade
+# Check and update the server to use (https://pypi.python.org/pypi) and your credentials
+nano ~/.pypirc
+# Build the distributions
+python setup.py sdist
+python setup.py bdist_wheel
+# Register and upload your package
+twine register dist/*.whl
+twine upload dist/*
+```
 
 ## To go further
 

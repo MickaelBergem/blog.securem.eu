@@ -68,20 +68,22 @@ You can install it with `pip install docker-compose`.
 
 Here is the `docker-compose.yml` file:
 
-    # Composition of the containers needed
+```yml
+# Composition of the containers needed
 
-    owncloud:
-      container_name: owncloud
-      image: owncloud
-      ports:
-       - 80:80
-      links:
-       - postgres:owncloud-db
+owncloud:
+  container_name: owncloud
+  image: owncloud
+  ports:
+   - 80:80
+  links:
+   - postgres:owncloud-db
 
-    postgres:
-      image: postgres
-      environment:
-        - POSTGRES_PASSWORD=mysecretpassword
+postgres:
+  image: postgres
+  environment:
+    - POSTGRES_PASSWORD=mysecretpassword
+```
 
 All you have to do now is `docker-compose up` to start all the containers.
 
@@ -104,8 +106,10 @@ This is achieved using the `docker-compose.yml` file I uploaded [in this Gist](h
 To check all the data is persisted, you can star files (or remove/create files), and then remove the `postgres` and
 `owncloud` containers to check if the next `docker-compose up` does persist these modifications:
 
-    docker rm -f test_owncloud_1 test_postgres_1 # Replace "test" by the name of your folder
-    docker-compose up
+```bash
+docker rm -f test_owncloud_1 test_postgres_1 # Replace "test" by the name of your folder
+docker-compose up
+```
 
 Then go back in your browser:
 

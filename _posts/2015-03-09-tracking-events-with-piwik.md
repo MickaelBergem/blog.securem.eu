@@ -36,15 +36,19 @@ Piwik and Google Analytics only track page views by default (who was where, when
 
 Every time you need to track what happened on the client side, [Piwik can track it](http://piwik.org/docs/event-tracking/), and this is really easy. All you have to do is to call the following piece of Javascript :
 
-    _paq.push(['trackEvent', 'CategoryName', 'ActionName', 'ActionValue']);
+```javascript
+_paq.push(['trackEvent', 'CategoryName', 'ActionName', 'ActionValue']);
+```
 
 For example, in the case of the team pictures :
 
-    $(function () {
-        $('.team-member > img').on("mouseover", function () {
-            _paq.push(['trackEvent', 'Behavior', 'HoverPhoto', this.id]); }
-        )
+```javascript
+$(function () {
+    $('.team-member > img').on("mouseover", function () {
+        _paq.push(['trackEvent', 'Behavior', 'HoverPhoto', this.id]);
     })
+});
+```
 
 Here is the result :
 
@@ -52,8 +56,9 @@ Here is the result :
 
 Note that you can also pass an optional numeric value for the action :
 
-    _paq.push(['trackEvent', 'Posts', 'RatingPost', 'PostName', 8.5]);
-
+```javascript
+_paq.push(['trackEvent', 'Posts', 'RatingPost', 'PostName', 8.5]);
+```
 
 ### Tracking events directly from you application or server
 
