@@ -116,14 +116,14 @@ that):
 
 **Second step**: Run the command a first time to ensure everything works fine:
 
-    ./letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/
+    ./letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/ --non-interactive
 
 I chose to put then renew command in a crontab, ran as root as it needs to
 access protected parts of the system. It is ran every two months.
 
     sudo crontab -e
     # This should open an editor, so add the following line
-    0 0 1 */2 1 /where/you/installed/letsencrypt/letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/
+    0 0 1 */2 1 /where/you/installed/letsencrypt/letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/ --non-interactive
 
 Now you can let your server manage its own certificates :)
 
