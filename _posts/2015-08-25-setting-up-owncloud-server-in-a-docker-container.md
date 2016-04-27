@@ -2,7 +2,7 @@
 layout: post
 title: "Setting up an ownCloud Server in a Docker container using Docker Compose"
 description: "How to setup an ownCloud server with Docker Compose"
-category: "Serverside"
+category: "ServerSide"
 tags: ['Docker', 'ownCloud', 'opensource']
 image: /assets/illustrations/docker-owncloud-1.png
 ---
