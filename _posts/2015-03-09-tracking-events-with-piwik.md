@@ -31,7 +31,7 @@ Piwik and Google Analytics only track page views by default (who was where, when
 
 * who clicked on which button, and triggered what action inside the page ?
 * who read the text to the end (footer) ?
-* which photos are the most hovered on [the "about / team" page of your website like this one](http://geoponts.securem.eu/about) ? This one is a very nice idea for curious people like me (who is the most charismatic in your team ?)
+* which photos are the most hovered on [the "about / team" page of your website like this one](https://geoponts.enpc.fr/about) ? This one is a very nice idea for curious people like me (who is the most charismatic in your team ?)
 * when you have dynamic content : who visited tabs, accordions ?
 
 Every time you need to track what happened on the client side, [Piwik can track it](http://piwik.org/docs/event-tracking/), and this is really easy. All you have to do is to call the following piece of Javascript :
