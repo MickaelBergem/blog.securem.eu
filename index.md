@@ -6,12 +6,12 @@ layout: page
 
 Welcome to my blog.
 
-I am Mickaël, aka [Suixo](https://twitter.com/msuixo), a French student and hacker.
+I am Mickaël, aka [Suixo](https://twitter.com/msuixo), a French developer, entrepreneur and hacker.
 Learn more about me [on my personal webpage](http://me.securem.eu/).
 
 ***
 
-Here are my last blog posts :
+Here are my latest blog posts :
 
 <ul class="posts">
   {% for post in site.posts %}

@@ -37,5 +37,5 @@
 {% if page.tags %}
 {% for tag in page.tags %}<meta content="{{ tag }}" property="article:tag">{% endfor %}
 {% endif %}
-<meta property="twitter:site" content="{{ author.twitter }}">
-<meta property="twitter:creator" content="{{ author.twitter }}">
+<meta property="twitter:site" content="@{{ site.author.twitter }}">
+<meta property="twitter:creator" content="@{{ site.author.twitter }}">
