@@ -7,6 +7,7 @@ additional security feature, it does not protect against unwilling CAs nor
 mis-issued certificate being used in the wild. CA must implement it before
 September 2017."
 category: "ServerSide"
+image: /assets/illustrations/google-testssl.png
 tags: [security, TLS, PKI, DNS]
 ---
 {% include JB/setup %}
@@ -135,7 +136,9 @@ the following DNS CAA steps at home. The only inconvenience you may experience i
 administrative one while trying to renew your certificates, and updating your
 DNS records will get you safe while not affecting your uptime or your visitors.
 
-First, let's read some records:
+### Read and check DNS CAA records
+
+Before adding our own records, let's check out how Google is using the CAA RR:
 
 ```bash
 $ dig +nocomments type257 google.com
@@ -150,17 +153,44 @@ google.com.             86399   IN      CAA     0 issue "symantec.com"
 Here we learn that only `pki.goog` and Symantec are allowed to deliver
 certificates for `google.com` (and no one is allowed to deliver wildcard certs).
 
-Now, add you own records. If you are using Lets'Encrypt like me, adapt the following records:
+Fun fact: Google seems to be still experimenting with this new standard as domain names like "google.fr" are not (yet?) returning CAA records.
+
+### Add your own records
+
+Now, let's add you own records. Let's say you are using **Let's Encrypt** and
+you want to protect your domain **blog.securem.eu**. Only Let's Encrypt should be
+allowed to deliver certificates for this domain. You also want to be notified if
+there is a **policy violation** (if someone tries to register blog.securem.eu on
+GoDaddy for instance), at your email elon.musk@gmail.com (lucky you!). Here are the records
+you need to add to your DNS zone file:
 
 ```dns
-cloud.securem.eu.	IN	CAA	0 issue "letsencrypt.org"
-test.securem.eu.	IN	CAA	0 iodef "mailto:dnscaa@securem.eu"
+blog.securem.eu.	IN	CAA	0 issue "letsencrypt.org"
+blog.securem.eu.	IN	CAA	0 iodef "mailto:elon.musk@gmail.com"
 ```
 
-My registrar does not support (yet) this record, so I had to use
-[https://sslmate.com/labs/caa/](https://sslmate.com/labs/caa/) in the "legacy
-mode".
+Beware: not all registrars currently support CAA records, you may try
+[https://sslmate.com/labs/caa/](https://sslmate.com/labs/caa/) with the "legacy
+mode" to make it work.
+
+### Did you do well?
 
 Tools such as [test.ssl](https://github.com/drwetter/testssl.sh ) or the [Qualys
 Server Test](https://www.ssllabs.com/ssltest/) now check these records, and you
 should now get a green result, yipeee!
+
+![Example of Google's Qualy test results, as of July 3rd](/assets/illustrations/caa-dns-google.png)
+
+## Take-away
+
+While it is not yet supported by all the providers, this 4-year-old standard has
+[recently become mandatory for
+CAs](https://blog.qualys.com/ssllabs/2017/03/13/caa-mandated-by-cabrowser-forum).
+Thus, **all of them will have to implement CAA verification by September**, so
+be ready and add your own records today!
+
+Please also note that this standard is **not bulletproof** but will
+**contribute** to your overall security.
+
+I will be more than happy to answer your questions, comments, and thoughts about
+this "new" mechanism! :)
