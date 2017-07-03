@@ -119,11 +119,16 @@ that):
     ./letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/ --non-interactive
 
 I chose to put then renew command in a crontab, ran as root as it needs to
-access protected parts of the system. It is ran every two months at 1am.
+access protected parts of the system. It is ran every month at 1am.
 
     sudo crontab -e
     # This should open an editor, so add the following line
-    0 1 1 */2 * /where/you/installed/letsencrypt/letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/ --non-interactive
+    0 1 1 * * /where/you/installed/letsencrypt/letsencrypt-auto certonly -d your.expiring.domain.com --webroot --webroot-path /var/www/letsencrypt-webroot/ --non-interactive && nginx -s reload
+
+One important thing is that **you need to reload your webserver** (the `&& nginx
+-s reload` part) to make it use the new certificate: without that it will
+continue using the old one. Thanks to Justin Finkelstein in the comments for
+pointing it out.
 
 Now you can let your server manage its own certificates :)
 
