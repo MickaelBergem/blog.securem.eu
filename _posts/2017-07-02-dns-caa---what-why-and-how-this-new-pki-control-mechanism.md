@@ -64,7 +64,7 @@ have no effect if the CA is controlled by a malicious actor.
 
 ## How it works
 
-Did you know the first checks restricting a CA's ability to deliver certificates
+Aside note: did you know the first checks restricting a CA's ability to deliver certificates
 were written after... the French National CyberSecurity Agency (ANSSI) kind of
 ([the whole story is bit more
 complicated](https://arstechnica.com/security/2013/12/french-agency-caught-minting-ssl-certificates-impersonating-google/))
@@ -77,7 +77,7 @@ domains, or a couple of other French-related TLDs. I find it pretty amazing to
 have a hardcoded constraint in a browser just for my country's agency.
 
 Unfortunately, this kind of event will still be possible with DNS CAA. More on
-this in the next parts, but first, what is this brand new DNS record?
+this in the next parts, but first, **what is this brand new DNS record?**
 
 ### The DNS CA RR
 
@@ -194,3 +194,5 @@ Please also note that this standard is **not bulletproof** but will
 
 I will be more than happy to answer your questions, comments, and thoughts about
 this "new" mechanism! :)
+
+Feel free to comment on the [Hacker News conversation](https://news.ycombinator.com/item?id=15156106) or in the Discuss below.
