@@ -64,7 +64,9 @@ By running a company and working with other talented CTOs I also learned other i
 * You can choose to write no tests and to instead manually test the critical path of your app before each deploy. Important bugs will be caught by this manual testing and small bugs would be caught by [Sentry](https://medium.com/@msuixo/configure-sentry-for-vue-js-project-6aa07efe2c80) when your users hit them. Not ideal but if you have a lot of users, it could make sense to save time on the test maintenance and use it on manual testing. I call this the "Sentry-driven deployment", but I don't recommend it unless you really know what you're doing ;)
 * One last note about testing and code coverage: it's fine to not cover branches that should almost never be executed, unless there is a high importance accorded to this branch ("you won the lottery!"). You're going to invest time/resource into testing something that is not important. The same is also true about language features: you want to focus on testing the business logic of your code, but not the language feature - after all it's not your job to make sure that the language you're using does its job.
 
-Just to be clear, I do not advise against writing tests: sometimes they will actually help you ship the feature faster, for instance when it's easier to test your code using a test than to test it manually by pushing buttons in your application. And the time you save now by not writing tests now is converted into tech debt, that will sooner or later bite you and slow you down. It's all about balancing the two, and "when to write tests" will maybe be another blog post.
+Just to be clear, I do **not** advise against writing tests: sometimes they will actually help you ship the feature faster, for instance when it's easier to test your code using a test than to test it manually by pushing buttons in your application.
+[Test-Drive Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) is then a very powerful way to go, and will guarantee that your tests actually test the business logic.
+And the time you save now by not writing tests now is converted into tech debt, that will sooner or later bite you and slow you down. It's all about balancing the two, and "when to write tests" is a whole piece and will maybe become another blog post.
 
 Overall, if your goal is to measure the quality of your product, **do not use code coverage as a metric**. Instead, you can use the following checklist items, at the end of every sprint:
 
@@ -74,7 +76,7 @@ Overall, if your goal is to measure the quality of your product, **do not use co
 
 In terms of quantitative metric, we still have the following:
 
-* number of issues reported by your users or by error reporting tools like [Sentry](https://sentry.io/) (which can also report the number of regressions)
+* number of issues reported by your users or by error reporting tools like [Sentry](https://sentry.io/) (which can also report the number of regressions). The lower the better.
 * how much does the customer(s)/user(s) like the application? Rate 1-10.
 * any customer-focus result metric: time saved for the user, number of projects created inside your app, etc.
 
