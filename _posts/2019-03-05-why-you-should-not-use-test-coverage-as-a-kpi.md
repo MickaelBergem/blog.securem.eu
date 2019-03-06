@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why you should not use test coverage as a KPI"
-description: ""
+description: "Using code coverage as a metric for the product quality is tempting, but it's actually a bad idea."
 category: "Opinions"
 tags: ['development','testing','best practices']
 image: /assets/illustrations/code-coverage.png
