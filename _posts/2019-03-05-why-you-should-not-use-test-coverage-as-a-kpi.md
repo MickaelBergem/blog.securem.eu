@@ -80,4 +80,4 @@ In terms of quantitative metric, we still have the following:
 * how much does the customer(s)/user(s) like the application? Rate 1-10.
 * any customer-focus result metric: time saved for the user, number of projects created inside your app, etc.
 
-I hope this has been useful. Please let me know if you disagree or if you have comments about this, I'd be happy to jump in a chat [on Twitter](https://twitter.com/msuixo/) or by email (see the footer of this page).
+I hope this has been useful. Please let me know if you disagree or if you have comments about this, I'd be happy to jump in a chat [on Twitter](https://twitter.com/msuixo/) or by email (see the footer of this page). You can also comment on the [Hacker News thread](https://news.ycombinator.com/item?id=19319780).
