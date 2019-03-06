@@ -104,9 +104,6 @@ blockquote cite {
 strong {
   font-weight: bold;
 }
-em {
-  font-weight: bold;
-}
 /*
 Color schemes
 
@@ -762,7 +759,7 @@ pre {
   }
 }
 /*
-	Not that old computer layout 
+	Not that old computer layout
 */
 @media only screen and (min-width: 1280px) {
   .the-header .unit-inner {
@@ -808,7 +805,7 @@ pre {
   }
 }
 /*
-	Huge-screen layout 
+	Huge-screen layout
 */
 @media only screen and (min-width: 1410px) {
   .the-header .unit-inner {
