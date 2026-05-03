@@ -4,10 +4,9 @@ layout: page
 ---
 {% include JB/setup %}
 
-Welcome to my blog.
+Welcome to my very old blog. I don't post here anymore.
 
-I am Mickaël, aka [Suixo](https://twitter.com/msuixo), a French developer, entrepreneur and hacker.
-Learn more about me [on my personal webpage](http://me.securem.eu/).
+I am a French software engineer, entrepreneur and hacker.
 
 ***
 
