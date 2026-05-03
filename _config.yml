@@ -12,10 +12,8 @@ highlighter: rouge
 title : A Student Hacker's Life
 tagline: Site Tagline
 author :
-  name : Mickaël Bergem
-  email : mickael&#x00040;securem.eu
-  github : MickaelBergem
-  twitter : msuixo
+  name : Mickaël
+  email : blog&#x00040;securem.eu
 
 description: A Hacker's blog on coding, tech and security stuff.
 # The production_url is only used when full-domain names are needed
@@ -81,7 +79,7 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+#    provider : disqus
     disqus :
       short_name : astudenthackerslife
 
