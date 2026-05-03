@@ -1,6 +1,6 @@
 # Jekyll-Bootstrap
 
-[![uptime](https://badge.howfast.securem.eu:8080/uptime.png?t=https%3A%2F%2Fblog.securem.eu%2F)](https://howfast.securem.eu/#/servers/https%3A%2F%2Fblog.securem.eu%2F)
+[![uptime](https://badge.slim.howfast.tech/uptime.png?t=https%3A%2F%2Fblog.securem.eu%2F)](https://www.howfast.tech/monitors/https:%2F%2Fblog.securem.eu%2F?pk_campaign=badge)
 
 The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
 
